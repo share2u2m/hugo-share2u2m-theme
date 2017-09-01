@@ -1,0 +1,47 @@
+{{ define "content" }}
+<div class="row">
+    <div class="page-header">
+        <ol class="breadcrumb">
+            <li><a href="{{ .Site.BaseURL }}">Home</a></li>
+            <li class="active">{{ .Section }}</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="visible-xs col-xs-1"></div>
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+        <div style="padding-top:10px"></div>
+        {{ range (.Paginator 3).Pages.ByPublishDate }}
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ .Title }}</h3>
+            </div>
+            <div class="panel-body">
+                <p>{{ .Summary }}</p>
+            </div>
+            {{ if .Truncated }}
+            <div class="panel-footer">
+                <p class="text-right">
+                    <a href="{{ .RelPermalink }}" role="button">Read More...</a>
+                </p>
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+        <div></div>
+        {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+        <ul class="pager main-pager">
+            {{ if .Paginator.HasPrev }}
+            <li class="previous">
+                <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}"><<< Prev</a>
+            </li>
+            {{ end }} {{ if .Paginator.HasNext }}
+            <li class="next">
+                <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}">Next >>></a>
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

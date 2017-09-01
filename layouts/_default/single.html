@@ -1,0 +1,39 @@
+{{ define "content" }}
+<div class="row">
+    <div class="page-header">
+        <ol class="breadcrumb">
+            <li><a href="{{ .Site.BaseURL }}">Home</a></li>
+            <li><a href="{{ .Site.BaseURL }}{{ .Section }}">{{ .Section }}</a></li>
+            <li class="active">{{ .Title }}</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="visible-xs col-xs-1"></div>
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+        <header>
+            <h1>{{ .Title }}</h1>
+        </header>
+        <article>{{ .Content }}</article>
+    </div>
+</div>
+<div class="row">
+    <div class="visible-xs col-xs-1"></div>
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+        {{ if or (.PrevInSection) (.NextInSection) }}
+        <ul class="pager main-pager">
+            {{ if .PrevInSection }}
+            <li class="previous">
+                <a href="{{ .PrevInSection.Permalink }}">
+                    <<< {{ .PrevInSection.Title }}</a>
+            </li>
+            {{ end }} {{ if .NextInSection }}
+            <li class="next">
+                <a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }} >>></a>
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

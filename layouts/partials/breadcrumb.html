@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col">
+        <nav class="breadcrumb">
+            {{ if .Parent }}
+                {{ partial "bread-item-link.html" .Parent }}
+            {{ end }}
+            <span class="breadcrumb-item active">{{ .Title }}</span>
+        </nav>
+    </div>
+</div>

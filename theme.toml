@@ -1,15 +1,22 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/spf13/hugoThemes#themetoml for an example
 
-name = "SLancer"
+name = "hugo-theme-s2u2m"
 license = "GNU GPLv3"
 licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
 description = ""
-homepage = "https://github.com/share2u2m"
+homepage = "https://github.com/xiayy860612/hugo-theme-s2u2m"
 tags = ["", ""]
 features = ["", ""]
 min_version = 0.15
 
 [author]
-  name = "Amos Xia"
-  homepage = "https://github.com/share2u2m"
+  name = ""
+  avatar = ""
+  motto = ""
+  github = ""
+  email = ""
+
+[params]
+  beian = ""
+  copyright = ""

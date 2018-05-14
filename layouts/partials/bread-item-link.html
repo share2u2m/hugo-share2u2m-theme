@@ -1,0 +1,9 @@
+
+{{ if .IsHome }}
+<a class="breadcrumb-item" href="/">Home</a>
+{{ else }}
+{{ if .Parent }}
+{{ partial "bread-item-link.html" .Parent }}
+{{ end }}
+<a class="breadcrumb-item" href="{{ .Permalink }}">{{ .Title }}</a>
+{{ end }}

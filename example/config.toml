@@ -1,0 +1,16 @@
+
+themesDir = "../.."
+theme = "hugo-theme-s2u2m"
+
+title = "Amos"
+
+[author]
+    name = "Amos Xia"
+    avatar = ""
+    motto = "行至水穷处, 坐看云起时"
+    github = "https://github.com/xiayy860612"
+    email = "xiayy860612@126.com"
+
+[params]
+    beian = "蜀ICP备18013492号"
+    copyright = "s2u2m"

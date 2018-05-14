@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <!-- self intro -->
+    <div class="row">
+        <div class="col">
+            <div class="card text-left" style="border: none">
+                <img class="card-img-top" src="{{ .Site.Author.avatar }}" alt="self">
+                
+                <div class="card-body">
+                    <h4 class="card-title">{{ .Site.Author.name }}</h4>
+                    <!-- <p class="card-text" >{{ .Site.Author.motto }}</p> -->
+                    <small class="card-text text-muted">{{ .Site.Author.motto }}</small>
+                </div>
+
+                <!-- social -->
+                <div class="card-body border-top">
+                    <a class="external" href="{{ .Site.Author.github }}" target="_blank">
+                        <i class="fa fa-github fa-lg"></i>
+                    </a>
+                    <a class="email" href="mailto:{{ .Site.Author.email }}">
+                        <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

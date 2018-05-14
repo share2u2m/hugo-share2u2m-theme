@@ -1,3 +1,24 @@
-{{ define "content" }} 
+{{ define "content" }}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card text-left" style="border: none">
+                <div class="card-block">
+                    <h3 class="card-title">最新发表</h3>
+                </div>
 
+                <ul class="list-group list-group-flush">
+                    {{ range (first 7 .Pages.ByPublishDate) }}
+                    <li class="list-group-item">
+                        <h3 class="list-group-item-heading">
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </h3>
+                        <small class="list-group-item-text">{{ .Summary }}</small>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 {{ end }}

@@ -15,9 +15,9 @@
     <br />
     <div class="row">
         <div class="col">
-            {{ $paginator := .Paginate .Pages.ByPublishDate 5 }}
+            {{ $paginator := .Paginate .Pages.ByDate 5 }}
             <div class="list-group list-group-flush">
-                {{ range $paginator.Pages }}
+                {{ range $paginator.Pages.Reverse }}
                 <a class="list-group-item" href="{{ .Permalink }}">{{ .Title }}</a>
                 {{ end }}
             </div>

@@ -1,12 +1,12 @@
-# Share2U2M Lancer Theme
+# S2U2M theme for hugo
 
-Integrate with [PlayFab][]
+It's a static website theme for hugo.
 
 ## Features
-- Support Menus in 2 levels
 
-## Requirement
+- supported nested sections
+- all content follow [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.zh)
 
+## FAQ
 
----
-[PlayFab]: https://playfab.com/
+any bugs, improvement, you can create issue for them.

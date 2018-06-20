@@ -1,0 +1,55 @@
+<div class="container">
+    {{ $paginator := .Paginate .Pages.ByDate.Reverse 5 }}
+
+    <div class="row">
+        <div class="col">
+            <div class="list-group list-group-flush">
+                {{ range $paginator.Pages.Reverse }}
+                <a class="list-group-item" href="{{ .Permalink }}">{{ .Title }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    {{ if $paginator.HasPrev }}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ .Permalink }}page/{{ $paginator.Prev.PageNumber }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    {{ else }}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    {{ end }}
+                    <!-- <li class="page-item active"><a class="page-link" href="#"></a></li>
+                <li class="page-item"><a class="page-link" href="#"></a></li> -->
+                    {{ if $paginator.HasNext }}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ .Permalink }}page/{{ $paginator.Next.PageNumber }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                    {{ else }}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</div>

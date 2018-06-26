@@ -15,50 +15,38 @@
         </div>
     </div>
 
+    <!-- title -->
+    <div class="row">
+        <div class="col">
+            <blockquote class="blockquote text-center">
+                <h1 class="mb-0">{{ .Title }}</h1>
+                <footer class="blockquote-footer">{{ .Site.Author.name }}, {{ .Lastmod.Format "2006-01-02 15:04:05" }}</footer>
+            </blockquote>
+            <hr />
+        </div>
+    </div>
+
     <!-- blog content -->
     <div class="row">
         <div class="col">
-            <header>
-                <h1>{{ .Title }}</h1>
-            </header>
-            <br />
             <article>{{ .Content }}</article>
         </div>
     </div>
-    
+
     <div class="row">
         <div class="col">
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
+            <hr />
+            <blockquote class="blockquote text-center">
+                <small class="mb-0">
+                    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                        <img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+                    </a>
+                    <br />
+                    本作品采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
+                </small>
+            </blockquote>
+            <hr />
         </div>
     </div>
 </div>
-<!-- <div class="row">
-    <div class="visible-xs col-xs-1"></div>
-    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-        <header>
-            <h1>{{ .Title }}</h1>
-        </header>
-        <article>{{ .Content }}</article>
-    </div>
-</div>
-<div class="row">
-    <div class="visible-xs col-xs-1"></div>
-    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-        {{ if or (.PrevInSection) (.NextInSection) }}
-        <ul class="pager main-pager">
-            {{ if .PrevInSection }}
-            <li class="previous">
-                <a href="{{ .PrevInSection.Permalink }}">
-                    <<< {{ .PrevInSection.Title }}</a>
-            </li>
-            {{ end }} 
-            {{ if .NextInSection }}
-            <li class="next">
-                <a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }} >>></a>
-            </li>
-            {{ end }}
-        </ul>
-        {{ end }}
-    </div>
-</div> -->
 {{ end }}

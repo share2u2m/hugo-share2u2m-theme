@@ -20,3 +20,4 @@ min_version = 0.15
 [params]
   beian = ""
   copyright = ""
+  discussEnable = false

@@ -7,6 +7,7 @@ It's a static website theme for hugo.
 - supported nested sections
 - support Bootstrap 4
 - all content follow [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.zh)
+- integrate discuss system [gitalk](https://github.com/gitalk/gitalk)
 
 ## FAQ
 

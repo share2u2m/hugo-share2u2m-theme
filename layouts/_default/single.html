@@ -20,7 +20,7 @@
         <div class="col">
             <blockquote class="blockquote text-center">
                 <h1 class="mb-0">{{ .Title }}</h1>
-                <footer class="blockquote-footer">{{ .Site.Author.name }}, {{ .Lastmod.Format "2006-01-02 15:04:05" }}</footer>
+                <footer class="blockquote-footer">{{ .Site.Author.name }}, 更新于{{ .Lastmod.Format "2006-01-02 15:04:05" }}</footer>
             </blockquote>
             <hr />
         </div>
@@ -58,11 +58,13 @@
             <script src="/js/md5.min.js"></script>
             <div id="gitalk-container"></div>
             <script type="text/javascript">
+                let rel_path = location.pathname
+                console.debug(rel_path)
                 var gitalkConfig = $.getJSON("/gitalk.json", function(data) {
                     var gitalk = new Gitalk({
                         clientID: data.clientID,
                         clientSecret: data.clientSecret,
-                        id: md5(location.pathname),
+                        id: md5(rel_path),
                         repo: data.repo,
                         owner: data.owner,
                         admin: data.admin,
